@@ -179,14 +179,15 @@ const HeroSection: React.FC = () => {
           className="animate-fadeInUp"
           style={{
             color: '#bbb',
-            fontSize: 'clamp(14px, 1.5vw, 18px)',
+            fontSize: 'clamp(11px, 1.5vw, 18px)',
             maxWidth: 700,
-            margin: '0 auto 40px',
-            lineHeight: 1.8,
-            letterSpacing: 2,
+            margin: '0 auto 30px',
+            lineHeight: 1.6,
+            letterSpacing: 'clamp(1px, 0.3vw, 2px)',
             textTransform: 'uppercase',
             fontFamily: "'Oswald', sans-serif",
             fontWeight: 400,
+            padding: '0 10px',
           }}
         >
           En lo profundo de la Rotonda de Grove Street, donde el verde no es solo un color sino una identidad,
@@ -194,18 +195,18 @@ const HeroSection: React.FC = () => {
         </Paragraph>
 
         {/* Botones */}
-        <Space size={16} className="animate-fadeInUp" style={{ marginBottom: 60 }}>
+        <Space size={12} className="animate-fadeInUp" style={{ marginBottom: 60, flexWrap: 'wrap', justifyContent: 'center' }}>
           <Button
             type="primary"
             size="large"
             icon={<PlayCircleOutlined />}
             onClick={scrollToHistoria}
             style={{
-              height: 52,
-              padding: '0 36px',
-              fontSize: 16,
+              height: 'clamp(40px, 6vw, 52px)',
+              padding: '0 clamp(16px, 4vw, 36px)',
+              fontSize: 'clamp(12px, 2vw, 16px)',
               fontWeight: 700,
-              letterSpacing: 3,
+              letterSpacing: 'clamp(1px, 0.3vw, 3px)',
               borderRadius: 4,
               background: 'linear-gradient(135deg, #1a7a1a, #22c55e)',
               border: '2px solid #22c55e',
@@ -223,11 +224,11 @@ const HeroSection: React.FC = () => {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
             style={{
-              height: 52,
-              padding: '0 36px',
-              fontSize: 16,
+              height: 'clamp(40px, 6vw, 52px)',
+              padding: '0 clamp(16px, 4vw, 36px)',
+              fontSize: 'clamp(12px, 2vw, 16px)',
               fontWeight: 700,
-              letterSpacing: 3,
+              letterSpacing: 'clamp(1px, 0.3vw, 3px)',
               borderRadius: 4,
               border: '2px solid #22c55e',
               color: '#22c55e',
