@@ -26,11 +26,15 @@ else
   cd "$APP_DIR"
 fi
 
-# 2. Eliminar contenedor anterior si existe
+# 2. Eliminar contenedor anterior si existe y liberar puerto
 echo "🧹 Limpiando contenedores anteriores..."
+docker stop families-app 2>/dev/null || true
 docker rm -f families-app 2>/dev/null || true
 
-# 3. Buildear y levantar contenedor
+# 3. Esperar a que el puerto se libere
+sleep 2
+
+# 4. Buildear y levantar contenedor
 echo "🐳 Buildando y levantando contenedor Docker..."
 docker compose up -d --build
 
