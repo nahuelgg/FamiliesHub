@@ -18,7 +18,7 @@ services:
     container_name: families-app
     restart: unless-stopped
     ports:
-      - "3001:3001"
+      - "3004:3004"
     environment:
       - NODE_ENV=production
-      - PORT=3001
+      - PORT=3004
