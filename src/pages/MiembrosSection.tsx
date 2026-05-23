@@ -38,7 +38,7 @@ const miembros: Miembro[] = [
     color: '#16a34a',
     lealtad: 98,
     habilidades: ['Liderazgo', 'Lealtad', 'Organización'],
-    desc: 'El hermano mayor. La mente fría que mantiene unida a la familia.',
+    desc: 'La hermanita. La mente fría que mantiene unida a la familia.',
   },
   {
     nombre: 'Ryder',
