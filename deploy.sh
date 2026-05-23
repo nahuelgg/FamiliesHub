@@ -26,7 +26,11 @@ else
   cd "$APP_DIR"
 fi
 
-# 2. Buildear y levantar contenedor
+# 2. Eliminar contenedor anterior si existe
+echo "🧹 Limpiando contenedores anteriores..."
+docker rm -f families-app 2>/dev/null || true
+
+# 3. Buildear y levantar contenedor
 echo "🐳 Buildando y levantando contenedor Docker..."
 docker compose up -d --build
 
