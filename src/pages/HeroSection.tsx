@@ -96,8 +96,8 @@ const HeroSection: React.FC = () => {
         <div
           className="animate-sprayFade"
           style={{
-            margin: '0 auto 30px',
-            maxWidth: 220,
+            margin: '0 auto 20px',
+            maxWidth: 'min(220px, 50vw)',
             filter: 'drop-shadow(0 0 40px rgba(34, 197, 94, 0.6))',
           }}
         >
@@ -133,10 +133,10 @@ const HeroSection: React.FC = () => {
         <Title
           className="animate-neonPulse"
           style={{
-            fontSize: 'clamp(48px, 10vw, 120px)',
+            fontSize: 'clamp(32px, 8vw, 120px)',
             fontWeight: 900,
             fontFamily: "'Anton', 'Oswald', sans-serif",
-            letterSpacing: '12px',
+            letterSpacing: 'clamp(4px, 1.5vw, 12px)',
             textTransform: 'uppercase',
             color: '#22c55e',
             margin: 0,
@@ -161,10 +161,10 @@ const HeroSection: React.FC = () => {
           level={2}
           style={{
             color: '#fff',
-            fontSize: 'clamp(18px, 3vw, 34px)',
+            fontSize: 'clamp(16px, 3vw, 34px)',
             fontWeight: 700,
             fontFamily: "'Archivo Black', 'Oswald', sans-serif",
-            letterSpacing: 14,
+            letterSpacing: 'clamp(4px, 1.5vw, 14px)',
             textTransform: 'uppercase',
             margin: '10px 0 30px',
             opacity: 0.9,
