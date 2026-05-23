@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Oswald', 'Anton', 'Bebas Neue', 'Archivo Black', sans-serif;
+  background-color: #050505;
+  color: #e5e5e5;
+  overflow-x: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ade80;
+}
+
+/* Animaciones globales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 3px 0 #22c55e, -3px 0 #1a7a1a;
+  }
+  25% {
+    text-shadow: -3px 0 #22c55e, 3px 0 #1a7a1a;
+  }
+  50% {
+    text-shadow: 3px 3px #22c55e, -3px -3px #1a7a1a;
+  }
+  75% {
+    text-shadow: -3px 3px #22c55e, 3px -3px #1a7a1a;
+  }
+  100% {
+    text-shadow: 3px 0 #22c55e, -3px 0 #1a7a1a;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sprayFade {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 7px #22c55e,
+      0 0 14px #22c55e,
+      0 0 28px #22c55e,
+      0 0 56px #1a7a1a;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #22c55e,
+      0 0 20px #22c55e,
+      0 0 40px #22c55e,
+      0 0 80px #1a7a1a;
+  }
+}
+
+@keyframes drip {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sprayFade {
+  animation: sprayFade 1.2s ease forwards;
+}
+
+.animate-neonPulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* Efecto de texto verde neón - versión mejorada */
+.neon-text {
+  text-shadow:
+    0 0 7px rgba(34, 197, 94, 0.6),
+    0 0 14px rgba(34, 197, 94, 0.4),
+    0 0 28px rgba(34, 197, 94, 0.2),
+    0 0 56px rgba(26, 122, 26, 0.1);
+}
+
+/* Efecto de texto con borde marcado estilo stencil */
+.stencil-text {
+  -webkit-text-stroke: 1px rgba(34, 197, 94, 0.3);
+  text-stroke: 1px rgba(34, 197, 94, 0.3);
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.8),
+    4px 4px 0 rgba(34, 197, 94, 0.15);
+}
+
+/* Efecto de borde verde neón */
+.neon-border {
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.3),
+    inset 0 0 10px rgba(34, 197, 94, 0.1),
+    0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+/* Efecto de borde estilo spray */
+.spray-border {
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.15),
+    inset 0 0 15px rgba(34, 197, 94, 0.05);
+  position: relative;
+}
+
+.spray-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: inherit;
+  filter: blur(2px);
+}
+
+/* Overlay de gradiente oscuro + verde */
+.gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 122, 26, 0.15) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Clase para el fondo de la página */
+.page-bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(26, 122, 26, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(26, 122, 26, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #050505 0%, #000000 100%);
+}
+
+/* Efecto de textura de graffiti (patrón de puntos) */
+.graffiti-texture {
+  position: relative;
+}
+
+.graffiti-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    radial-gradient(circle at 20% 30%, #22c55e 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, #22c55e 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, #1a7a1a 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px, 50px 50px;
+  pointer-events: none;
+}
+
+/* Efecto de sombra difusa verde */
+.green-glow {
+  box-shadow:
+    0 0 20px rgba(34, 197, 94, 0.2),
+    0 0 40px rgba(34, 197, 94, 0.1),
+    0 0 60px rgba(26, 122, 26, 0.05);
+}
+
+/* Texto con efecto spray */
+.spray-text {
+  position: relative;
+  display: inline-block;
+}
+
+.spray-text::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid rgba(34, 197, 94, 0.08);
+  border-radius: 2px;
+  filter: blur(3px);
+  pointer-events: none;
+}
